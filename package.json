@@ -15,5 +15,5 @@
     "test": "react-scripts test --env=jsdom",
     "eject": "react-scripts eject"
   },
-  "home-page": "https://github.com/fm20115412/react-pro/build"
+  "home-page": "https://fm20115412.github.io/react-pro/build"
 }

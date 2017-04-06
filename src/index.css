@@ -3,13 +3,14 @@ body {
   padding: 0;
   font-family: "Whitney Cond A", "Whitney Cond B","Lato", "Lucida Grande", "Lucida Sans Unicode", Tahoma, Sans-Serif;
   background: lightsalmon;
-  position: relative;
 }
-h1{
+#root{
   position: absolute;
-  color: #1c7727;
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
+}
+h1{
+  color: #1c7727;
 }
 

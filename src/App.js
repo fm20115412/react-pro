@@ -18,7 +18,7 @@ class App extends Component {
       let todos=this.state.todoList.map((item,index)=>{
           return(
               <li key={index}>
-                  <TodoItem todo={item} onToggle={this.toggle.bind(this)}/>
+                  <TodoItem todo={item} onToggle={this.toggle.bind(this)} onDelete={this.delete.bind(this)}/>
               </li>
           )
       })
@@ -58,11 +58,16 @@ class App extends Component {
 
       })
   }
+  // TodoItme 完成状态更改时调用这个函数
   toggle(e,todo){
       todo.status=(todo.status==="completed"?"":"completed")
       this.setState(this.state);
   }
-
+ // TodoItem 点击删除按钮时调用这个函数
+   delete(e,todo){
+      todo.deleted=true
+       this.setState(this.state);
+   }
 }
 export default App;
 let id=0;

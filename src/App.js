@@ -33,7 +33,7 @@ class App extends Component {
                              onChage={this.changeTitle.bind(this)}
                              onSubmit={this.addTodo.bind(this)}/>
               </div>
-                <ol>
+                <ol className="todolist">
                     {todos}
                 </ol>
           </div>

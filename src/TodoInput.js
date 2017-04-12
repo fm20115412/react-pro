@@ -9,11 +9,13 @@ export default class TodoInput extends Component{
                       onChange={this.changeTitle.bind(this)}
                       onKeyPress={this.submit.bind(this)}/>
     }
+    // 调用父元素的函数
     submit(e){
         if (e.key=="Enter"){
             this.props.onSubmit(e);
         }
     }
+    // 调用父元素的函数
     changeTitle(e){
         this.props.onChange(e);
     }

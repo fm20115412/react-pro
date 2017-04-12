@@ -30,7 +30,7 @@ class App extends Component {
              <h1>我的待办</h1>
               <div className="inputWrapper">
                   <TodoInput content={this.state.newTodo}
-                             onChage={this.changeTitle.bind(this)}
+                             onChange={this.changeTitle.bind(this)}
                              onSubmit={this.addTodo.bind(this)}/>
               </div>
                 <ol className="todolist">

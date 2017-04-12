@@ -1,8 +1,12 @@
+html{
+  height:100%;
+}
 body {
   margin: 0;
-  padding: 0;
+  padding: 5em;
+  height:100%;
   font-family: "Whitney Cond A", "Whitney Cond B","Lato", "Lucida Grande", "Lucida Sans Unicode", Tahoma, Sans-Serif;
-  background: lightsalmon;
+  background: linear-gradient(135deg, #1ebbca, #ebbca7);
 }
 /*#root{
   position: absolute;

@@ -24,7 +24,6 @@ class App extends Component {
               </li>
           )
       })
-      console.log(todos)
       return (
           <div className="App">
              <h1>我的待办</h1>

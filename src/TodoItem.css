@@ -1,9 +1,84 @@
 .TodoItem{
-    padding: .5em;
     display: flex;
     align-items: center;
+    position: relative;
+    background-color: #FFF;
+    cursor: pointer;
+    margin-top: 10px;
+    padding:10px;
+    border-radius: 5px;
+    font-family: "Fira Sans", sans-serif;
+    color: #757575;
+    transition: all 0.2s;
+}
+.TodoItem:hover{
+    transform: scale(1.02);
+}
+.checkbox1{
+    width:20px;
+    height:20px;
+    opacity: 1;
+    z-index:2;
+    position: relative;
+    margin:0 10px;
+}
+.checkbox1:before{
+    position: absolute;
+    background:  #ebbca7;
+    height:20px;
+    width:20px;
+    display: block;
+    content:"";
+
+}
+.checkbox1:after{
+    left: 7px;
+    top: 2px;
+    width: 7px;
+    height: 12px;
+    border: solid #1ebbca;
+    border-width: 0 2px 2px 0;
+    transform: rotate(45deg);
+    display: none;
+    opacity: 1;
+    content: '';
+    position: absolute;
+}
+.checkbox1:checked:after{
+    display: block;
+}
+.checkbox1:checked +span{
+    text-decoration: line-through;
+    opacity: 0.5;
+}
+.checkbox1:checked ~ button{
+    opacity: 0.5;
 }
 .TodoItem > .title{
     flex-grow:1;
     padding: 0 .5em;
+}
+span{
+    display: inline-block;
+    margin:0 10px;
+    padding: 10px 20px;
+    height:35px;
+    line-height: 35px;
+    border-left: 1px solid  #ebbca7;
+    color:#ebbca7;
+    font-weight: 400;
+    font-size: 24px;
+}
+button{
+    outline: none;
+    border:none;
+    height:35px;
+    display: inline-block;
+    padding: 0 10px;
+    text-align: center;
+    border-radius: 8px;
+    background: #ebbca7;
+    color:#fff;
+    font-size: 16px;
+    font-weight: 100;
 }

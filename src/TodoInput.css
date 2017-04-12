@@ -1,7 +1,14 @@
 .TodoInput{
     width:100%;
-    line-height:1.8;
+    height:50px;
+    border-radius: 5px;
+    border:none;
+    outline:none;
+    font-size: 18px;
     margin-bottom: 1em;
-    font-size: 16px;
-    padding:0 .2em
+    font-size: 24px;
+    color: #ebbca7;
+    padding:0 1.2em;
+    background: #fff;
+    box-shadow: 0 25px 40px -20px #3c4a56;
 }

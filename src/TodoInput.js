@@ -12,7 +12,7 @@ export default class TodoInput extends Component{
     }
     // 调用父元素的函数
     submit(e){
-        if (e.key=="Enter"){
+        if (e.key==="Enter"){
             this.props.onSubmit(e);
         }
     }

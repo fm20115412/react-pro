@@ -8,10 +8,10 @@
 
 }
 .App > .todoList > li:nth-child(old){
-  background: #eee;
+  color:#ebbca7
 }
-.App > .todoList > li:nth-child(old){
-  background: transparent;
+.App > .todoList > li:nth-child(even){
+  color:#1ebbca
 }
 .App h1{
   color: #fff;

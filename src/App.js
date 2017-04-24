@@ -4,26 +4,27 @@ import "normalize.css"
 import "./reset.css"
 import TodoInput from "./TodoInput";
 import TodoItem from "./TodoItem";
+import * as localStore from "./localStore"
 
 class App extends Component {
   constructor(props){
       super(props)
       this.state={
           newTodo:"",
-          todoList:[
-          ]
+          todoList:localStore.load("todoList")||[]
       }
   }
   render(){
       let todos=this.state.todoList
           .filter((item)=>!item.deleted)
           .map((item,index)=>{
-          return(
+          return (
               <li key={index}>
                   <TodoItem todo={item} onToggle={this.toggle.bind(this)} onDelete={this.delete.bind(this)}/>
               </li>
           )
       })
+      console.log(todos);
       return (
           <div className="App">
              <h1>我的待办</h1>
@@ -32,11 +33,14 @@ class App extends Component {
                              onChange={this.changeTitle.bind(this)}
                              onSubmit={this.addTodo.bind(this)}/>
               </div>
-                <ol className="todolist">
+                <ol className="todoList">
                     {todos}
                 </ol>
           </div>
       )
+  }
+  componentDidUpdate(){
+      localStore.save("todoList",this.state.todoList)
   }
   // TodoInput 按下回车执行这个函数
   addTodo(event){
@@ -56,7 +60,6 @@ class App extends Component {
       this.setState({
           newTodo:event.target.value,
           todoList:this.state.todoList
-
       })
   }
   // TodoItme 完成状态更改时调用这个函数

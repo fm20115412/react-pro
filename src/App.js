@@ -5,6 +5,8 @@ import "./reset.css"
 import TodoInput from "./TodoInput";
 import TodoItem from "./TodoItem";
 import * as localStore from "./localStore"
+import UserDialog from "./UserDialog"
+
 
 class App extends Component {
   constructor(props){
@@ -15,6 +17,7 @@ class App extends Component {
       }
   }
   render(){
+
       let todos=this.state.todoList
           .filter((item)=>!item.deleted)
           .map((item,index)=>{
@@ -26,6 +29,7 @@ class App extends Component {
       })
       console.log(todos);
       return (
+          
           <div className="App">
              <h1>我的待办</h1>
               <div className="inputWrapper">

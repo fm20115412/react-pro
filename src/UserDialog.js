@@ -27,18 +27,28 @@ export default class UserDialog extends Component{
             this.props.onSignUp.call(null,user);
         }
         let error=(error)=>{
-            alert(error);
+            switch (error.code){
+                case 202:alert("用户名已经被占用")
+                         break
+                default: alert(error)
+                         break
+            }
         }
         signUp(username,password,success,error)
     }
     signIn(e){
         e.preventDefault();
-        let {username,password}=this.state.user;
+        let {username,password}=this.state.formData;
         let success=(user)=>{
             this.props.onSignIn.call(null,user)
         }
         let error=(error)=>{
-            alert(error);
+            switch (error.code){
+                case 210:alert("用户名与密码不匹配")
+                    break
+                default: alert(error)
+                    break
+            }
         }
         signIn(username,password,success,error);
     }

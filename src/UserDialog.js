@@ -3,11 +3,16 @@
  */
 import React,{Component} from "react";
 import "./UserDialog.css"
+import {signUp,signIn} from "./leanCloud"
 export default class UserDialog extends Component{
     constructor(props){
         super(props)
         this.state={
-            selected:"signUp"
+            selected:"signUp",
+            formData:{
+                username:"",
+                password:""
+            }
         }
     }
     switch(e){
@@ -15,16 +20,43 @@ export default class UserDialog extends Component{
             selected:e.target.value
         })
     }
+    signUp(e){
+        e.preventDefault();
+        let {username,password}=this.state.formData
+        let success=(user)=>{
+            this.props.onSignUp.call(null,user);
+        }
+        let error=(error)=>{
+            alert(error);
+        }
+        signUp(username,password,success,error)
+    }
+    signIn(e){
+        e.preventDefault();
+        let {username,password}=this.state.user;
+        let success=(user)=>{
+            this.props.onSignIn.call(null,user)
+        }
+        let error=(error)=>{
+            alert(error);
+        }
+        signIn(username,password,success,error);
+    }
+    changeFormData(key,e){
+        let stateCopy=JSON.parse(JSON.stringify(this.state))
+        stateCopy.formData[key]=e.target.value
+        this.setState(stateCopy)
+    }
     render(){
         let signUpForm=(
-            <form className="signUp">
+            <form className="signUp" onSubmit={this.signUp.bind(this)}>
                 <div className="row">
                     <label>用户名</label>
-                    <input type="text"/>
+                    <input type="text" value={this.state.formData.username} onChange={this.changeFormData.bind(this,"username")}/>
                 </div>
                 <div className="row">
                     <label>密码</label>
-                    <input type="text"/>
+                    <input type="text" value={this.state.formData.password} onChange={this.changeFormData.bind(this,"password")}/>
                 </div>
                 <div className="row actions">
                     <button type="submit">注册</button>
@@ -32,14 +64,14 @@ export default class UserDialog extends Component{
             </form>
         )
         let signInForm=(
-            <form className="signIn">
+            <form className="signIn" onSubmit={this.signIn.bind(this)}>
                 <div className="row">
                     <label>用户名</label>
-                    <input type="text"/>
+                    <input type="text" value={this.state.formData.username} onChange={this.changeFormData.bind(this,"username")}/>
                 </div>
                 <div className="row">
                     <label>密码</label>
-                    <input type="text"/>
+                    <input type="text" value={this.state.formData.password} onChange={this.changeFormData.bind(this,"password")}/>
                 </div>
                 <div className="row actions">
                     <button type="submit">登陆</button>
@@ -51,10 +83,15 @@ export default class UserDialog extends Component{
                 <div className="UserDialog">
                     <nav onChange={this.switch.bind(this)}>
                         <label>
-                            <input type="radio" value="signUp" checked={this.state.selected==="signUp"}/>注册
+                            <input type="radio" value="signUp"
+                                   checked={this.state.selected==="signUp"}
+                                   onChange={this.switch.bind(this)}
+                            />注册
                         </label>
                         <label>
-                            <input type="radio" value="signIn" checked={this.state.selected==="signIn"}/>登陆
+                            <input type="radio" value="signIn"
+                                   checked={this.state.selected==="signIn"}
+                                   onChange={this.switch.bind(this)}/>登陆
                         </label>
                     </nav>
                     <div className="panels">

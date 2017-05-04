@@ -12,7 +12,7 @@ class App extends Component {
   constructor(props){
       super(props)
       this.state={
-          user:{},
+          user:this.isLogin()||{},
           newTodo:"",
           todoList:[]
       }
@@ -31,7 +31,6 @@ class App extends Component {
           return (
               <div className="App">
                   <h1>{this.state.user.username||"我"}的待办
-                      {this.state.user.id? <button className="loginOut" onClick={this.onSignOut.bind(this)}>登出</button>:null }
                   </h1>
                   <div className="inputWrapper">
                       <TodoInput content={this.state.newTodo}
@@ -41,6 +40,7 @@ class App extends Component {
                   <ol className="todoList">
                       {todos}
                   </ol>
+                  {this.state.user.id? <button className="loginOut" onClick={this.onSignOut.bind(this)}>登出</button>:null }
               </div>
           )
       }else{
@@ -52,6 +52,14 @@ class App extends Component {
           )
       }
   }
+    isLogin(){
+        if(getCurrentUser()){
+            this.loadTodo();
+            return getCurrentUser();
+        }else{
+            return {}
+        }
+    }
     onSignUp(user){
         let stateCopy=jsonParse(this.state);
         stateCopy.user=user;
@@ -88,7 +96,7 @@ class App extends Component {
         }
     }
     updateTodo(){
-        let dataString = jsonParse(this.state)
+        let dataString = JSON.stringify(this.state.todoList)
         let todoList=AV.Object.createWithoutData("TodoList",this.state.todoList.id)
         todoList.set("content",dataString)
         todoList.save().then(()=>{
@@ -96,7 +104,7 @@ class App extends Component {
         })
     }
     saveTodo(){
-        let dataString = jsonParse(this.state)
+        let dataString = JSON.stringify(this.state.todoList)
         var TodoList = AV.Object.extend('TodoList');
         var todoList = new TodoList();
         var acl = new AV.ACL()
@@ -156,6 +164,7 @@ class App extends Component {
        this.saveOrUpdateTodo()
        this.get()
    }
+
 }
 export default App;
 let id=0;

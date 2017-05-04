@@ -18,9 +18,9 @@
   color: #fff;
 }
 .App .loginOut{
-  position: absolute;
+  /*position: absolute;
   bottom: 10px;
-  left:250px;
+  left:250px;*/
   width:20%;
   height:2.5em;
   background:rgba(30,187,202,.7);

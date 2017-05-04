@@ -18,19 +18,21 @@
 .UserDialog >nav:first-child{
     padding: 1em 0;
     font-size: 20px;
-    color:#f38c5e;
+    color:#1ebbca;
+    margin-bottom: .5em;
+    padding-left: 4em;
 }
 .UserDialog >nav:first-child label{
     margin-left: 2em;
     cursor: pointer;
     opacity: .8;
-    padding: 0 5px;
+    padding: 0 .5em;
 }
 .UserDialog >nav:first-child input{
     display: none;
 }
 .UserDialog >nav:first-child input:checked+label{
-    border-bottom: 3px solid #1ebbca;
+    border-bottom: 3px solid #f38c5e;
     opacity: 1;
 }
 .UserDialog > .panels{

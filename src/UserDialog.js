@@ -22,11 +22,11 @@ export default class UserDialog extends Component{
         })
     }
     signUp(e){
+        e.preventDefault();
         if (!this.state.formData.username || !this.state.formData.password) {
             alert('请输入用户名或密码')
             return
         }
-        e.preventDefault();
         let {username,password}=this.state.formData
         let success=(user)=>{
             this.props.onSignUp.call(null,user);
@@ -46,11 +46,11 @@ export default class UserDialog extends Component{
         signUp(username,password,success,error)
     }
     signIn(e){
+        e.preventDefault();
         if (!this.state.formData.username || !this.state.formData.password) {
             alert('请输入用户名或密码')
             return
         }
-        e.preventDefault();
         let {username,password}=this.state.formData;
         let success=(user)=>{
             this.props.onSignIn.call(null,user)

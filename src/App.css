@@ -5,6 +5,7 @@
   padding: 0 1em;
   min-height: 30em;
   width: 40em;
+  position:relative;
 
 }
 .App > .todoList > li:nth-child(old){
@@ -15,4 +16,21 @@
 }
 .App h1{
   color: #fff;
+}
+.App .loginOut{
+  position: absolute;
+  bottom: 10px;
+  left:250px;
+  width:20%;
+  height:2.5em;
+  background:rgba(30,187,202,.7);
+  font-size: 20px;
+  padding:10px;
+  border:none;
+  outline:none;
+  color:white;
+  margin-top: 1em;
+}
+.App .loginOut:hover{
+  background:rgba(30,187,202,1);
 }

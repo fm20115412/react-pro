@@ -70,7 +70,7 @@ span{
     font-weight: 400;
     font-size: 24px;
 }
-button{
+.TodoItem button{
     outline: none;
     border:none;
     height:35px;

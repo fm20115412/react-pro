@@ -5,6 +5,7 @@ import "./reset.css"
 import TodoInput from "./TodoInput";
 import TodoItem from "./TodoItem";
 import UserDialog from "./UserDialog"
+import jsonParse from "./jsonTrans"
 
 import AV,{getCurrentUser,signOut} from "./leanCloud"
 class App extends Component {
@@ -30,7 +31,7 @@ class App extends Component {
           return (
               <div className="App">
                   <h1>{this.state.user.username||"我"}的待办
-                      {this.state.user.id? <button onClick={this.onSignOut.bind(this)}>登出</button>:null }
+                      {this.state.user.id? <button className="loginOut" onClick={this.onSignOut.bind(this)}>登出</button>:null }
                   </h1>
                   <div className="inputWrapper">
                       <TodoInput content={this.state.newTodo}
@@ -52,19 +53,19 @@ class App extends Component {
       }
   }
     onSignUp(user){
-        let stateCopy=JSON.parse(JSON.stringify(this.state));
+        let stateCopy=jsonParse(this.state);
         stateCopy.user=user;
         this.setState(stateCopy)
     }
     onSignIn(user){
-        let stateCopy=JSON.parse(JSON.stringify(this.state));
+        let stateCopy=jsonParse(this.state);
         stateCopy.user=user;
         this.setState(stateCopy)
         this.loadTodo();
     }
     onSignOut(){
       signOut();
-      let stateCopy=JSON.parse(JSON.stringify(this.state));
+      let stateCopy=jsonParse(this.state);
       stateCopy.user={}
       stateCopy.todoList=[]
       this.setState(stateCopy)
@@ -73,14 +74,12 @@ class App extends Component {
         let currentUser=getCurrentUser();
         if(currentUser){
             var query=new AV.Query("TodoList")
-            let _this=this;
-            query.find().then(
-                function (todos) {
+            query.find().then((todos) =>{
                     let todo=todos[0]
-                    let stateCopy=JSON.parse(JSON.stringify(_this.state));
+                    let stateCopy=jsonParse(this.state)
                     stateCopy.todoList=JSON.parse(todo.get("content"))
                     stateCopy.todoList.id=todo.id
-                    _this.setState(stateCopy)
+                    this.setState(stateCopy)
                     console.log(todo.get("content"))
                 },function (error) {
                     console.log(error)
@@ -89,7 +88,7 @@ class App extends Component {
         }
     }
     updateTodo(){
-        let dataString = JSON.stringify(this.state.todoList)
+        let dataString = jsonParse(this.state)
         let todoList=AV.Object.createWithoutData("TodoList",this.state.todoList.id)
         todoList.set("content",dataString)
         todoList.save().then(()=>{
@@ -97,7 +96,7 @@ class App extends Component {
         })
     }
     saveTodo(){
-        let dataString = JSON.stringify(this.state.todoList)
+        let dataString = jsonParse(this.state)
         var TodoList = AV.Object.extend('TodoList');
         var todoList = new TodoList();
         var acl = new AV.ACL()
@@ -105,11 +104,10 @@ class App extends Component {
         acl.setWriteAccess(AV.User.current(),true) // 只有这个 user 能写
         todoList.set('content', dataString);
         todoList.setACL(acl) // 设置访问控制
-        let _this=this
-        todoList.save().then(function (todo) {
-            let stateCopy=JSON.parse(JSON.stringify(_this.state));
+        todoList.save().then((todo)=> {
+            let stateCopy=jsonParse(this.state);
             stateCopy.todoList.id=todo.id
-            _this.setState(stateCopy)
+            this.setState(stateCopy)
         }, function (error) {
             alert('保存失败');
         });

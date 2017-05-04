@@ -22,6 +22,10 @@ export default class UserDialog extends Component{
         })
     }
     signUp(e){
+        if (!this.state.formData.username || !this.state.formData.password) {
+            alert('请输入用户名或密码')
+            return
+        }
         e.preventDefault();
         let {username,password}=this.state.formData
         let success=(user)=>{
@@ -29,12 +33,12 @@ export default class UserDialog extends Component{
         }
         let error=(error)=>{
             switch (error.code){
+                case 101:alert('网络故障')
+                         break
                 case 202:alert("用户名已经被占用")
                          break
-                case 217:alert("无效的用户名，不允许空白用户名")
-                    break
-                case 218:alert("无效的密码，不允许空白密码")
-                    break
+                case 502:alert('服务器维护中')
+                         break
                 default: alert(error)
                          break
             }
@@ -42,6 +46,10 @@ export default class UserDialog extends Component{
         signUp(username,password,success,error)
     }
     signIn(e){
+        if (!this.state.formData.username || !this.state.formData.password) {
+            alert('请输入用户名或密码')
+            return
+        }
         e.preventDefault();
         let {username,password}=this.state.formData;
         let success=(user)=>{
@@ -49,11 +57,13 @@ export default class UserDialog extends Component{
         }
         let error=(error)=>{
             switch (error.code){
+                case 101:alert('网络故障')
+                    break
                 case 210:alert("用户名与密码不匹配")
                     break
-                case 201:alert("请输入密码")
-                    break
                 case 211:alert("找不到用户")
+                    break
+                case 502:alert('服务器维护中')
                     break
                 default: alert(error)
                     break

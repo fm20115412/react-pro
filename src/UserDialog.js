@@ -85,7 +85,7 @@ export default class UserDialog extends Component{
                 </div>
                 <div className="row">
                     <label htmlFor="password">密码</label>
-                    <input type="text" id="password" value={this.state.formData.password} onChange={this.changeFormData.bind(this,"password")}/>
+                    <input type="password" id="password" value={this.state.formData.password} onChange={this.changeFormData.bind(this,"password")}/>
                 </div>
                 <div className="row actions">
                     <button type="submit">注册</button>
@@ -100,7 +100,7 @@ export default class UserDialog extends Component{
                 </div>
                 <div className="row">
                     <label htmlFor="password">密码</label>
-                    <input type="text" id="password" value={this.state.formData.password} onChange={this.changeFormData.bind(this,"password")}/>
+                    <input type="password" id="password" value={this.state.formData.password} onChange={this.changeFormData.bind(this,"password")}/>
                 </div>
                 <div className="row actions">
                     <button type="submit">登陆</button>

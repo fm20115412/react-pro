@@ -19,6 +19,24 @@ export default class UserDialog extends Component{
             }
         }
     }
+    isValidUsername(str) {
+        var exp = /^\w{6,20}$/; //可以以数字下划线开头
+        return exp.test(str);
+    }
+    isLegalPassword(str){
+        if(str.length < 6 || str.length > 16){
+            return false;
+        }
+        //如果包含上述四种以外的字符，false
+        if(/[^A-Za-z_0-9]/.test(str)){
+            return false;
+        }
+        //如果全为大写、小写、下划线、数字, false
+        if( /(^[a-z]+$)|(^[A-Z]+$)|(^_+$)|(^\d+$)/g.test(str) ){
+            return false;
+        }
+        return true;
+    }
     signUp(e){
         e.preventDefault();
         if (!this.state.formData.username || !this.state.formData.password) {
@@ -40,6 +58,14 @@ export default class UserDialog extends Component{
                 default: alert(error)
                          break
             }
+        }
+        if(!this.isValidUsername(username)){
+            alert("请输入合法的用户名")
+            return
+        }
+        if(!this.isLegalPassword(password)){
+            alert("请输入合法的密码")
+            return
         }
         signUp(email,username,password,success,error)
     }

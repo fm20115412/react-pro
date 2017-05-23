@@ -59,7 +59,7 @@
     flex-grow:1;
     padding: 0 .5em;
 }
-span{
+.TodoItem span{
     display: inline-block;
     margin:0 10px;
     padding: 10px 20px;

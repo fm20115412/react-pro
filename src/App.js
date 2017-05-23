@@ -52,97 +52,97 @@ class App extends Component {
           )
       }
   }
-    isLogin(){
-        if(getCurrentUser()){
-            this.loadTodo();
-            return getCurrentUser();
-        }else{
-            return {}
-        }
-    }
-    onSignUp(user){
-        let stateCopy=jsonParse(this.state);
-        stateCopy.user=user;
-        this.setState(stateCopy)
-    }
-    onSignIn(user){
-        let stateCopy=jsonParse(this.state);
-        stateCopy.user=user;
-        this.setState(stateCopy)
+isLogin(){
+    if(getCurrentUser()){
         this.loadTodo();
+        return getCurrentUser();
+    }else{
+        return {}
     }
-    onSignOut(){
-      signOut();
-      let stateCopy=jsonParse(this.state);
-      stateCopy.user={}
-      stateCopy.todoList=[]
-      this.setState(stateCopy)
-  }
-    loadTodo(){
-        let currentUser=getCurrentUser();
-        if(currentUser){
-            var query=new AV.Query("TodoList")
-            query.find().then((todos) =>{
-                    let todo=todos[0]
-                    let stateCopy=jsonParse(this.state)
-                    stateCopy.todoList=JSON.parse(todo.get("content"))
-                    stateCopy.todoList.id=todo.id
-                    this.setState(stateCopy)
-                    console.log(todo.get("content"))
-                },function (error) {
-                    console.log(error)
-                }
-            )
-        }
+}
+onSignUp(user){
+    let stateCopy=jsonParse(this.state);
+    stateCopy.user=user;
+    this.setState(stateCopy)
+}
+onSignIn(user){
+    let stateCopy=jsonParse(this.state);
+    stateCopy.user=user;
+    this.setState(stateCopy)
+    this.loadTodo();
+}
+onSignOut(){
+  signOut();
+  let stateCopy=jsonParse(this.state);
+  stateCopy.user={}
+  stateCopy.todoList=[]
+  this.setState(stateCopy)
+}
+loadTodo(){
+    let currentUser=getCurrentUser();
+    if(currentUser){
+        var query=new AV.Query("TodoList")
+        query.find().then((todos) =>{
+                let todo=todos[0]
+                let stateCopy=jsonParse(this.state)
+                stateCopy.todoList=JSON.parse(todo.get("content"))
+                stateCopy.todoList.id=todo.id
+                this.setState(stateCopy)
+                console.log(todo.get("content"))
+            },function (error) {
+                console.log(error)
+            }
+        )
     }
-    updateTodo(){
-        let dataString = JSON.stringify(this.state.todoList)
-        let todoList=AV.Object.createWithoutData("TodoList",this.state.todoList.id)
-        todoList.set("content",dataString)
-        todoList.save().then(()=>{
-            console.log("更新成功")
-        })
+}
+updateTodo(){
+    let dataString = JSON.stringify(this.state.todoList)
+    let todoList=AV.Object.createWithoutData("TodoList",this.state.todoList.id)
+    todoList.set("content",dataString)
+    todoList.save().then(()=>{
+        console.log("更新成功")
+    })
+}
+saveTodo(){
+    let dataString = JSON.stringify(this.state.todoList)
+    var TodoList = AV.Object.extend('TodoList');
+    var todoList = new TodoList();
+    var acl = new AV.ACL()
+    acl.setReadAccess(AV.User.current(),true) // 只有这个 user 能读
+    acl.setWriteAccess(AV.User.current(),true) // 只有这个 user 能写
+    todoList.set('content', dataString);
+    todoList.setACL(acl) // 设置访问控制
+    todoList.save().then((todo)=> {
+        let stateCopy=jsonParse(this.state);
+        stateCopy.todoList.id=todo.id
+        this.setState(stateCopy)
+    }, function (error) {
+        alert('保存失败');
+    });
+}
+saveOrUpdateTodo(){
+    console.log("id:",this.state.todoList.id)
+    if(this.state.todoList.id){
+        console.log("update");
+        this.updateTodo();
+    }else{
+        console.log("save");
+        this.saveTodo();
     }
-    saveTodo(){
-        let dataString = JSON.stringify(this.state.todoList)
-        var TodoList = AV.Object.extend('TodoList');
-        var todoList = new TodoList();
-        var acl = new AV.ACL()
-        acl.setReadAccess(AV.User.current(),true) // 只有这个 user 能读
-        acl.setWriteAccess(AV.User.current(),true) // 只有这个 user 能写
-        todoList.set('content', dataString);
-        todoList.setACL(acl) // 设置访问控制
-        todoList.save().then((todo)=> {
-            let stateCopy=jsonParse(this.state);
-            stateCopy.todoList.id=todo.id
-            this.setState(stateCopy)
-        }, function (error) {
-            alert('保存失败');
-        });
-    }
-    saveOrUpdateTodo(){
-        console.log("id:",this.state.todoList.id)
-        if(this.state.todoList.id){
-            console.log("update");
-            this.updateTodo();
-        }else{
-            console.log("save");
-            this.saveTodo();
-        }
-    }
-    addTodo(event){
-      this.state.todoList.push({
-          id:idMaker(),
-          title:event.target.value,
-          status:null,
-          deleted:false
-      })
-      this.setState({
-            newTodo:"",
-            toloList:this.state.todoList
-      })
-      this.saveOrUpdateTodo()
-  }
+}
+addTodo(event){
+  this.state.todoList.push({
+      id:idMaker(),
+      title:event.target.value,
+      status:null,
+      deleted:false
+  })
+  this.setState({
+        newTodo:"",
+        toloList:this.state.todoList
+  })
+  this.saveOrUpdateTodo()
+}
   // TodoInput 值改变时执行这个函数
   changeTitle(event){
       this.setState({

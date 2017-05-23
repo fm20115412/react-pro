@@ -5,7 +5,11 @@ import React from "react"
 import "./TodoInput.css"
 function submit(props,e) {
     if (e.key==="Enter"){
-        props.onSubmit(e);
+        if(e.target.value.trim()===""){
+            alert("请输入您要办的事项")
+        }else{
+            props.onSubmit(e);
+        }
     }
 }
 function changeTitle(props,e){

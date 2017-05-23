@@ -2,6 +2,11 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="6fa58b20-7a3f-4dde-83a7-0384de2dd3ff" name="Default" comment="">
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/ForgotPasswordForm.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/SignInForm.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/SignInOrSignUp.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/SignUpForm.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/UserDialog.css" afterPath="$PROJECT_DIR$/src/UserDialog.css" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/UserDialog.js" afterPath="$PROJECT_DIR$/src/UserDialog.js" />
     </list>
@@ -24,47 +29,60 @@
       <file leaf-file-name="UserDialog.js" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/UserDialog.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="602">
-              <caret line="139" column="45" lean-forward="false" selection-start-line="139" selection-start-column="45" selection-end-line="139" selection-end-column="45" />
+            <state relative-caret-position="165">
+              <caret line="7" column="44" lean-forward="false" selection-start-line="7" selection-start-column="44" selection-end-line="7" selection-end-column="44" />
               <folding>
-                <element signature="e#39#77#0" expanded="true" />
-                <element signature="e#278#565#0" expanded="false" />
-                <element signature="e#579#657#0" expanded="false" />
-                <element signature="e#671#1416#0" expanded="false" />
-                <element signature="e#1013#1356#0" expanded="false" />
-                <element signature="e#1430#2211#0" expanded="false" />
-                <element signature="e#2237#2368#0" expanded="false" />
-                <element signature="e#2420#3404#0" expanded="false" />
-                <element signature="e#4323#5162#0" expanded="false" />
-                <element signature="e#6256#6403#0" expanded="false" />
-                <element signature="e#6424#6571#0" expanded="false" />
-                <element signature="e#6592#6684#0" expanded="false" />
+                <element signature="e#378#620#0" expanded="false" />
+                <element signature="e#634#1379#0" expanded="false" />
+                <element signature="e#976#1319#0" expanded="false" />
+                <element signature="e#1393#2174#0" expanded="false" />
+                <element signature="e#2200#2331#0" expanded="false" />
+                <element signature="e#3327#3474#0" expanded="false" />
+                <element signature="e#3663#3755#0" expanded="false" />
+                <marker date="1495526138347" expanded="false" signature="3495:3642" ph="{...}" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="UserDialog.css" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/src/UserDialog.css">
+      <file leaf-file-name="SignInOrSignUp.js" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/SignInOrSignUp.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="595">
-              <caret line="97" column="17" lean-forward="false" selection-start-line="97" selection-start-column="17" selection-end-line="97" selection-end-column="17" />
+            <state relative-caret-position="427">
+              <caret line="41" column="81" lean-forward="false" selection-start-line="41" selection-start-column="81" selection-end-line="41" selection-end-column="81" />
               <folding>
-                <element signature="e#19#140#0" expanded="false" />
-                <element signature="e#152#329#0" expanded="false" />
-                <element signature="e#512#596#0" expanded="false" />
-                <element signature="e#635#657#0" expanded="false" />
-                <element signature="e#710#767#0" expanded="false" />
-                <element signature="e#886#935#0" expanded="false" />
-                <element signature="e#979#1018#0" expanded="false" />
-                <element signature="e#1252#1435#0" expanded="false" />
-                <element signature="e#1583#1621#0" expanded="false" />
-                <element signature="e#2159#2180#0" expanded="false" />
-                <element signature="e#2199#2246#0" expanded="false" />
-                <element signature="e#2267#2316#0" expanded="false" />
-                <element signature="e#2355#2413#0" expanded="false" />
-                <element signature="e#2440#2622#0" expanded="false" />
+                <element signature="e#39#80#0" expanded="true" />
               </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="SignUpForm.js" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/SignUpForm.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="66">
+              <caret line="4" column="50" lean-forward="true" selection-start-line="3" selection-start-column="0" selection-end-line="4" selection-end-column="50" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="SignInForm.js" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/SignInForm.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="33">
+              <caret line="3" column="41" lean-forward="true" selection-start-line="3" selection-start-column="0" selection-end-line="3" selection-end-column="41" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="ForgotPasswordForm.js" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/ForgotPasswordForm.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="759">
+              <caret line="25" column="0" lean-forward="true" selection-start-line="25" selection-start-column="0" selection-end-line="25" selection-end-column="0" />
+              <folding />
             </state>
           </provider>
         </entry>
@@ -108,8 +126,13 @@
         <option value="$PROJECT_DIR$/src/App.css" />
         <option value="$PROJECT_DIR$/src/App.js" />
         <option value="$PROJECT_DIR$/src/leanCloud.js" />
-        <option value="$PROJECT_DIR$/src/UserDialog.js" />
         <option value="$PROJECT_DIR$/src/UserDialog.css" />
+        <option value="$PROJECT_DIR$/src/signUpForm.js" />
+        <option value="$PROJECT_DIR$/src/SignUpForm.js" />
+        <option value="$PROJECT_DIR$/src/SignInForm.js" />
+        <option value="$PROJECT_DIR$/src/ForgotPasswordForm.js" />
+        <option value="$PROJECT_DIR$/src/SignInOrSignUp.js" />
+        <option value="$PROJECT_DIR$/src/UserDialog.js" />
       </list>
     </option>
   </component>
@@ -129,10 +152,9 @@
     <handled-path value="$PROJECT_DIR$/node_modules" />
   </component>
   <component name="ProjectFrameBounds">
-    <option name="x" value="-8" />
-    <option name="y" value="-8" />
-    <option name="width" value="1696" />
-    <option name="height" value="1026" />
+    <option name="x" value="833" />
+    <option name="width" value="854" />
+    <option name="height" value="1017" />
   </component>
   <component name="ProjectView">
     <navigator currentView="ProjectPane" proportions="" version="1">
@@ -292,18 +314,18 @@
       <workItem from="1493955369357" duration="275000" />
       <workItem from="1493956198688" duration="2483000" />
       <workItem from="1494152635760" duration="130000" />
-      <workItem from="1495502788737" duration="9361000" />
+      <workItem from="1495502788737" duration="15831000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="159420000" />
+    <option name="totallyTimeSpent" value="165890000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="-8" y="-8" width="1696" height="1026" extended-state="6" />
+    <frame x="833" y="0" width="854" height="1017" extended-state="0" />
     <editor active="true" />
     <layout>
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.27380952" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.27326968" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32967034" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
@@ -347,39 +369,11 @@
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
-      <option name="time" value="5" />
+      <option name="time" value="6" />
     </breakpoint-manager>
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/.gitignore">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="330">
-          <caret line="10" column="0" lean-forward="false" selection-start-line="10" selection-start-column="0" selection-end-line="10" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/package.json">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="594">
-          <caret line="18" column="1" lean-forward="false" selection-start-line="18" selection-start-column="1" selection-end-line="18" selection-end-column="1" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/index.css">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="297">
-          <caret line="9" column="12" lean-forward="false" selection-start-line="9" selection-start-column="12" selection-end-line="9" selection-end-column="12" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/App.css">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/index.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
@@ -657,16 +651,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/App.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="726">
-          <caret line="22" column="20" lean-forward="false" selection-start-line="22" selection-start-column="16" selection-end-line="22" selection-end-column="20" />
-          <folding>
-            <element signature="e#0#41#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/leanCloud.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="660">
@@ -681,31 +665,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/UserDialog.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="602">
-          <caret line="139" column="45" lean-forward="false" selection-start-line="139" selection-start-column="45" selection-end-line="139" selection-end-column="45" />
-          <folding>
-            <element signature="e#39#77#0" expanded="true" />
-            <element signature="e#278#565#0" expanded="false" />
-            <element signature="e#579#657#0" expanded="false" />
-            <element signature="e#671#1416#0" expanded="false" />
-            <element signature="e#1013#1356#0" expanded="false" />
-            <element signature="e#1430#2211#0" expanded="false" />
-            <element signature="e#2237#2368#0" expanded="false" />
-            <element signature="e#2420#3404#0" expanded="false" />
-            <element signature="e#4323#5162#0" expanded="false" />
-            <element signature="e#6256#6403#0" expanded="false" />
-            <element signature="e#6424#6571#0" expanded="false" />
-            <element signature="e#6592#6684#0" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/UserDialog.css">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="595">
-          <caret line="97" column="17" lean-forward="false" selection-start-line="97" selection-start-column="17" selection-end-line="97" selection-end-column="17" />
+        <state relative-caret-position="590">
+          <caret line="105" column="17" lean-forward="false" selection-start-line="105" selection-start-column="17" selection-end-line="105" selection-end-column="17" />
           <folding>
             <element signature="e#19#140#0" expanded="false" />
             <element signature="e#152#329#0" expanded="false" />
@@ -716,12 +679,72 @@
             <element signature="e#979#1018#0" expanded="false" />
             <element signature="e#1252#1435#0" expanded="false" />
             <element signature="e#1583#1621#0" expanded="false" />
-            <element signature="e#2159#2180#0" expanded="false" />
-            <element signature="e#2199#2246#0" expanded="false" />
-            <element signature="e#2267#2316#0" expanded="false" />
-            <element signature="e#2355#2413#0" expanded="false" />
-            <element signature="e#2440#2622#0" expanded="false" />
+            <element signature="e#2182#2203#0" expanded="false" />
+            <element signature="e#2310#2359#0" expanded="false" />
+            <element signature="e#2398#2456#0" expanded="false" />
+            <element signature="e#2483#2665#0" expanded="false" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/App.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-891">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="1" selection-end-column="0" />
+          <folding>
+            <element signature="e#0#41#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/SignInForm.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="33">
+          <caret line="3" column="41" lean-forward="true" selection-start-line="3" selection-start-column="0" selection-end-line="3" selection-end-column="41" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/ForgotPasswordForm.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="759">
+          <caret line="25" column="0" lean-forward="true" selection-start-line="25" selection-start-column="0" selection-end-line="25" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/SignInOrSignUp.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="427">
+          <caret line="41" column="81" lean-forward="false" selection-start-line="41" selection-start-column="81" selection-end-line="41" selection-end-column="81" />
+          <folding>
+            <element signature="e#39#80#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/UserDialog.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="165">
+          <caret line="7" column="44" lean-forward="false" selection-start-line="7" selection-start-column="44" selection-end-line="7" selection-end-column="44" />
+          <folding>
+            <element signature="e#378#620#0" expanded="false" />
+            <element signature="e#634#1379#0" expanded="false" />
+            <element signature="e#976#1319#0" expanded="false" />
+            <element signature="e#1393#2174#0" expanded="false" />
+            <element signature="e#2200#2331#0" expanded="false" />
+            <element signature="e#3327#3474#0" expanded="false" />
+            <element signature="e#3663#3755#0" expanded="false" />
+            <marker date="1495526138347" expanded="false" signature="3495:3642" ph="{...}" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/SignUpForm.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="66">
+          <caret line="4" column="50" lean-forward="true" selection-start-line="3" selection-start-column="0" selection-end-line="4" selection-end-column="50" />
+          <folding />
         </state>
       </provider>
     </entry>

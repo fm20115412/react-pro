@@ -81,28 +81,29 @@
     align-items:flex-end;
     justify-content: space-around;
 }
-.signIn>.row button,.signIn>.actions a,.forgotPassword>.row button,.forgotPassword>.actions a{
+.signIn>.actions button,.signIn>.actions a,.forgotPassword>.actions button,.forgotPassword>.actions a{
     width:45%;
-    height:2em;
     background:rgba(30,187,202,0.7);
     font-size: 20px;
     padding:8px;
     border:none;
     outline:none;
     color:white;
+    vertical-align: baseline;
     margin-top: 1em;
+    line-height: 1.2;
 }
 .signIn>.actions a,.forgotPassword>.actions a{
     text-decoration: none;
     text-align: center;
-    margin-top: 1em;
 }
 .forgotPassword{
     padding: 1em;
 }
-.forgotPassword h3{
+.forgotPassword p{
     color: #1ebbca;
     text-align: center;
+    font-size: 22px;
 }
 .forgotPassword>.row{
     padding: .3em 0;

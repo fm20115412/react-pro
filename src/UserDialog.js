@@ -137,8 +137,9 @@ export default class UserDialog extends Component{
                 <h3>重置密码</h3>
                 <form className="forgotPassword" onSubmit={this.resetPassword.bind(this)}>
                     <div className="row">
-                        <label>邮箱</label>
-                        <input type="text" value={this.state.formData.email}
+                        <label htmlFor="email">邮箱</label>
+                        <input type="text" id="email"
+                            value={this.state.formData.email}
                             onChange={this.changeFormData.bind(this,"email")}/>
                     </div>
                     <div className="row actions">
@@ -152,7 +153,6 @@ export default class UserDialog extends Component{
             <div className="UserDialog-Wrapper">
                 <div className="UserDialog">
                     {this.state.seletedtab==="signInOrSignUp"?signInOrSignUp:forgotPassword}
-
                 </div>
             </div>
 

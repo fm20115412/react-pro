@@ -9,10 +9,11 @@ AV.init({
     appKey: APP_KEY
 });
 export default AV
-export function signUp(username,password,successFn,errorFn){
-    var user=new AV.User();
-    user.setUsername(username);
-    user.setPassword(password);
+export function signUp(email,username,password,successFn,errorFn){
+    var user=new AV.User()
+    user.setEmail(email)
+    user.setUsername(username)
+    user.setPassword(password)
     user.signUp().then(function (loginedUser) {
         let user = getUserFromAVUser(loginedUser)
         successFn.call(null,user)

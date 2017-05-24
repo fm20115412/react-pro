@@ -19,6 +19,7 @@ export default class UserDialog extends Component{
             }
         }
     }
+
     isValidUsername(str) {
         var exp = /^\w{6,20}$/; //可以以数字下划线开头
         return exp.test(str);
@@ -38,6 +39,7 @@ export default class UserDialog extends Component{
         return true;
     }
     signUp(e){
+
         e.preventDefault();
         if (!this.state.formData.username || !this.state.formData.password) {
             alert('请输入用户名或密码')
@@ -100,6 +102,7 @@ export default class UserDialog extends Component{
         stateCopy.formData[key]=e.target.value
         this.setState(stateCopy)
     }
+
     render(){
         return (
             <div className="UserDialog-Wrapper">

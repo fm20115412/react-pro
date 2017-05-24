@@ -23,7 +23,9 @@ class App extends Component {
           .map((item,index)=>{
           return (
               <li key={index}>
-                  <TodoItem todo={item} onToggle={this.toggle.bind(this)} onDelete={this.delete.bind(this)}/>
+                  <TodoItem todo={item}
+                            onToggle={this.toggle.bind(this)}
+                            onDelete={this.delete.bind(this)}/>
               </li>
           )
       })
@@ -40,7 +42,8 @@ class App extends Component {
                   <ol className="todoList">
                       {todos}
                   </ol>
-                  {this.state.user.id? <button className="loginOut" onClick={this.onSignOut.bind(this)}>登出</button>:null }
+                  {this.state.user.id? <button className="loginOut"
+                       onClick={this.onSignOut.bind(this)}>登出</button>:null }
               </div>
           )
       }else{
@@ -52,7 +55,7 @@ class App extends Component {
           )
       }
   }
-isLogin(){
+  isLogin(){
     if(getCurrentUser()){
         this.loadTodo();
         return getCurrentUser();
@@ -60,23 +63,23 @@ isLogin(){
         return {}
     }
 }
-onSignUp(user){
+  onSignUp(user){
     let stateCopy=jsonParse(this.state);
     stateCopy.user=user;
     this.setState(stateCopy)
-}
-onSignIn(user){
+    }
+  onSignIn(user){
     let stateCopy=jsonParse(this.state);
     stateCopy.user=user;
     this.setState(stateCopy)
     this.loadTodo();
-}
-onSignOut(){
-  signOut();
-  let stateCopy=jsonParse(this.state);
-  stateCopy.user={}
-  stateCopy.todoList=[]
-  this.setState(stateCopy)
+  }
+  onSignOut(){
+   signOut();
+   let stateCopy=jsonParse(this.state);
+   stateCopy.user={}
+   stateCopy.todoList=[]
+   this.setState(stateCopy)
 }
 loadTodo(){
     let currentUser=getCurrentUser();

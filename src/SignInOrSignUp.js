@@ -8,7 +8,7 @@ export default class SignInOrSignUp extends Component{
     constructor(props){
         super(props)
         this.state={
-            selected:"signUp"
+            selected:"signUp",
         }
     }
     switch(e){
@@ -33,7 +33,8 @@ export default class SignInOrSignUp extends Component{
                     {this.state.selected==="signUp"?
                         <SignUpForm formData={this.props.formData}
                                     onSubmit={this.props.onSignUp}
-                                    onChange={this.props.onChange}/>
+                                    onChange={this.props.onChange}
+                        />
                         : null}
                     {this.state.selected==="signIn"?
                         <SignInForm formData={this.props.formData}

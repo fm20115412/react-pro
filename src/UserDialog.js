@@ -19,7 +19,6 @@ export default class UserDialog extends Component{
             }
         }
     }
-
     isValidUsername(str) {
         var exp = /^\w{6,20}$/; //可以以数字下划线开头
         return exp.test(str);

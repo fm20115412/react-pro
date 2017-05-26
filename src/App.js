@@ -32,8 +32,7 @@ class App extends Component {
       if(this.state.user.id){
           return (
               <div className="App">
-                  <h1>{this.state.user.username||"我"}的待办
-                  </h1>
+                  <h1>{this.state.user.username||"我"}的待办</h1>
                   <div className="inputWrapper">
                       <TodoInput content={this.state.newTodo}
                                  onChange={this.changeTitle.bind(this)}
@@ -42,6 +41,11 @@ class App extends Component {
                   <ol className="todoList">
                       {todos}
                   </ol>
+                  <div className="switchButton">
+                      <span>所有任务</span>
+                      <span>正在进行</span>
+                      <span>已完成</span>
+                  </div>
                   {this.state.user.id? <button className="loginOut"
                        onClick={this.onSignOut.bind(this)}>登出</button>:null }
               </div>
@@ -138,7 +142,7 @@ addTodo(event){
       id:idMaker(),
       title:event.target.value,
       status:null,
-      deleted:false
+      deleted:false,
   })
   this.setState({
         newTodo:"",
@@ -155,8 +159,9 @@ addTodo(event){
   }
   // TodoItme 完成状态更改时调用这个函数
   toggle(e,todo){
-      todo.status=(todo.status==="completed"?"":"completed")
-      this.setState(this.state);
+      todo.status=(todo.status==="completed")?"":"completed"
+      this.saveOrUpdateTodo()
+      this.setState(this.state)
   }
  // TodoItem 点击删除按钮时调用这个函数
    delete(e,todo){
@@ -165,7 +170,7 @@ addTodo(event){
        stateCopy.todoList.splice(index,1)
        this.setState(stateCopy)
        this.saveOrUpdateTodo()
-       this.get()
+       // this.get()
    }
 
 }

@@ -6,7 +6,7 @@ import TodoInput from "./TodoInput";
 import TodoItem from "./TodoItem";
 import UserDialog from "./UserDialog"
 import jsonParse from "./jsonTrans"
-
+import classNames from "classnames"
 import AV,{getCurrentUser,signOut} from "./leanCloud"
 class App extends Component {
   constructor(props){
@@ -20,6 +20,9 @@ class App extends Component {
   }
   render(){
       let todoList=[]
+      let activeClass={
+          active:false
+      }
       if(this.state.selected==="all"){
           todoList=this.state.todoList.filter((item)=>!item.deleted)
       }else if(this.state.selected==="completed"){
@@ -52,9 +55,9 @@ class App extends Component {
                   <div className="todoManage">
                       <span>{(this.state.todoList.filter((item)=>(!item.deleted&&item.status==="processing"))).length} items left</span>
                       <div className="switchButton">
-                          <button onClick={this.switch.bind(this,"all")}>所有任务</button>
-                          <button onClick={this.switch.bind(this,"processing")}>正在进行</button>
-                          <button onClick={this.switch.bind(this,"completed")}>已完成</button>
+                          <button className={classNames({selected: this.state.selected === "all"})} onClick={this.switch.bind(this,"all")}>所有任务</button>
+                          <button className={classNames({selected: this.state.selected === "processing"})} onClick={this.switch.bind(this,"processing")}>正在进行</button>
+                          <button className={classNames({selected: this.state.selected === "completed"})} onClick={this.switch.bind(this,"completed")}>已完成</button>
                       </div>
                       {(this.state.todoList.filter((item)=>(!item.deleted&&item.status==="completed"))).length>0?
                       <button className="clearCompleted" onClick={this.clear.bind(this)}>清除已完成</button>:null}
@@ -77,6 +80,7 @@ class App extends Component {
       this.setState({
           selected:option
       })
+
   }
   clear(){
       let compltedTodoList=this.state.todoList.filter((item)=>(!item.deleted&&item.status==="completed"))

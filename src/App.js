@@ -78,6 +78,10 @@ class App extends Component {
           selected:option
       })
   }
+  clear(){
+      let compltedTodoList=this.state.todoList.filter((item)=>(!item.deleted&&item.status==="completed"))
+      compltedTodoList.map((item)=>this.delete(item))
+  }
   isLogin(){
     if(getCurrentUser()){
         this.loadTodo();
@@ -183,7 +187,7 @@ addTodo(event){
       this.setState(this.state)
   }
  // TodoItem 点击删除按钮时调用这个函数
-   delete(e,todo){
+   delete(todo){
        let index = this.state.todoList.indexOf(todo)
        let stateCopy=this.state
        stateCopy.todoList.splice(index,1)

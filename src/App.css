@@ -17,6 +17,14 @@
 .App h1{
   color: #fff;
 }
+.App .switchButton{
+  display: flex;
+  justify-content: space-between;
+  width:100%;
+}
+.App .switchButton button{
+  width:30%;
+}
 .App .loginOut{
   /*position: absolute;
   bottom: 10px;

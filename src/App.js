@@ -14,13 +14,20 @@ class App extends Component {
       this.state={
           user:this.isLogin()||{},
           newTodo:"",
-          todoList:[]
+          todoList:[],
+          selected:"all"  // completed,processing
       }
   }
   render(){
-      let todos=this.state.todoList
-          .filter((item)=>!item.deleted)
-          .map((item,index)=>{
+      let todoList=[]
+      if(this.state.selected==="all"){
+          todoList=this.state.todoList.filter((item)=>!item.deleted)
+      }else if(this.state.selected==="completed"){
+          todoList=this.state.todoList.filter((item)=>(!item.deleted&&item.status==="completed"))
+      }else{
+          todoList=this.state.todoList.filter((item)=>(!item.deleted&&item.status==="processing"))
+      }
+      let todos=todoList.map((item,index)=>{
           return (
               <li key={index}>
                   <TodoItem todo={item}
@@ -29,6 +36,7 @@ class App extends Component {
               </li>
           )
       })
+
       if(this.state.user.id){
           return (
               <div className="App">
@@ -41,11 +49,17 @@ class App extends Component {
                   <ol className="todoList">
                       {todos}
                   </ol>
-                  <div className="switchButton">
-                      <span>所有任务</span>
-                      <span>正在进行</span>
-                      <span>已完成</span>
+                  <div className="todoManage">
+                      <span>{(this.state.todoList.filter((item)=>(!item.deleted&&item.status==="processing"))).length} items left</span>
+                      <div className="switchButton">
+                          <button onClick={this.switch.bind(this,"all")}>所有任务</button>
+                          <button onClick={this.switch.bind(this,"processing")}>正在进行</button>
+                          <button onClick={this.switch.bind(this,"completed")}>已完成</button>
+                      </div>
+                      {(this.state.todoList.filter((item)=>(!item.deleted&&item.status==="completed"))).length>0?
+                      <button className="clearCompleted" onClick={this.clear.bind(this)}>清除已完成</button>:null}
                   </div>
+
                   {this.state.user.id? <button className="loginOut"
                        onClick={this.onSignOut.bind(this)}>登出</button>:null }
               </div>
@@ -58,6 +72,11 @@ class App extends Component {
               />
           )
       }
+  }
+  switch(option){
+      this.setState({
+          selected:option
+      })
   }
   isLogin(){
     if(getCurrentUser()){
@@ -141,7 +160,7 @@ addTodo(event){
   this.state.todoList.push({
       id:idMaker(),
       title:event.target.value,
-      status:null,
+      status:"processing",
       deleted:false,
   })
   this.setState({
@@ -159,7 +178,7 @@ addTodo(event){
   }
   // TodoItme 完成状态更改时调用这个函数
   toggle(e,todo){
-      todo.status=(todo.status==="completed")?"":"completed"
+      todo.status=(todo.status==="processing")?"completed":"processing"
       this.saveOrUpdateTodo()
       this.setState(this.state)
   }

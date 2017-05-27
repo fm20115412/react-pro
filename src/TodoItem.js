@@ -9,7 +9,7 @@ export default class TodoItem extends Component{
             <div className="TodoItem">
                 <input type="checkbox"  className="checkbox1" checked={this.props.todo.status==="completed"}
                        onChange={this.toggle.bind(this)} />
-                <span className="title">{this.props.todo.title}</span>
+                <span contentEditable="true" spellCheck="false" className="title">{this.props.todo.title}</span>
                 <button onClick={this.delete.bind(this)}>删除</button>
             </div>
         )

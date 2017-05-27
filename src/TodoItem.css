@@ -30,7 +30,6 @@
     width:20px;
     display: block;
     content:"";
-
 }
 .checkbox1:after{
     left: 7px;
@@ -58,6 +57,9 @@
 .TodoItem > .title{
     flex-grow:1;
     padding: 0 .5em;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
 }
 .TodoItem span{
     display: inline-block;

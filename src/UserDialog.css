@@ -5,6 +5,7 @@
     left:50%;
     transform: translate(-50%,-50%);
     padding: 10px;
+    font-family: 'Droid Serif', sans-serif;
 
 }
 .UserDialog{
@@ -19,7 +20,7 @@
     padding: 1em 0;
     font-size: 20px;
     color:#1ebbca;
-    margin-bottom: .5em;
+    margin-bottom: 1em;
     padding-left: 4em;
 }
 .signInOrSignUp >nav:first-child label{
@@ -41,30 +42,31 @@
     color:#f38c5e;
 }
 .signInOrSignUp form>.row{
-    padding: .3em 0;
-    margin-bottom: .5em;
+    padding: .2em 0;
+    margin-bottom: 1.8em;
+    position: relative;
 }
-/*.signInOrSignUp form>.row>label{
-    width:4em;
-    cursor: pointer;
-    transform: translateY(25px);
-    display: block;
-    transition: all 0.5s;
-}
-.signInOrSignUp form>.active>label{
-    transform: translateY(0px);
-}*/
 .signInOrSignUp form>.row input{
-    padding: 0.3em 0.5em;
+    padding: 0.3em 0em;
     width: 100%;
     border: none;
-    border-bottom: 2px solid #f38c5e;
+    border-bottom: 1px solid rgba(243,140,94,0.5);
     outline: none;
     font-size: 22px;
     color:#f38c5e;
 }
-.signUp .row label{
-
+.signInOrSignUp form>.row label{
+    position: absolute;
+    left:0px;
+    top:20px;
+    transition: all .5s ease;
+    font-size: 20px;
+    color:rgba(243,140,94,0.6)
+}
+.signInOrSignUp form>.row input:focus ~ label,.signInOrSignUp form>.row input:valid ~ label{
+    top:-20px;
+    font-size: 14px;
+    color:rgba(243,140,94,1)
 }
 .signUp>.row button{
     width:100%;
@@ -75,7 +77,6 @@
     border:none;
     outline:none;
     color:white;
-    margin-top: 1em;
 }
 .signUp>.row button:hover,
 .signIn>.row button:hover,
@@ -104,7 +105,6 @@
     outline:none;
     color:white;
     vertical-align: baseline;
-    margin-top: 1em;
     line-height: 1.2;
 }
 .signIn>.actions a,.forgotPassword>.actions a{

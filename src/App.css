@@ -32,17 +32,15 @@
   background: none;
   color:white;
   outline:none;
-  border:none
+  border:none;
+  width:33.3333%;
+  border-right: 1px solid #ebbca7;
 }
 .App .switchButton button:hover{
   background: #ebbca7;
 }
 .App .switchButton .selected{
   background: #ebbca7;
-}
-.App .switchButton button{
-  width:33.3333%;
-  border-right: 1px solid #ebbca7;
 }
 .App .switchButton button:last-child{
   border:none;

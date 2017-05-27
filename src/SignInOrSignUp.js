@@ -23,11 +23,11 @@ export default class SignInOrSignUp extends Component{
                     <input type="radio" value="signUp" id="signup"
                            checked={this.state.selected==="signUp"}
                            onChange={this.switch.bind(this)}/>
-                    <label htmlFor="signup"> 注册</label>
+                    <label htmlFor="signup"> Sign Up</label>
                     <input type="radio" value="signIn" id="signin"
                            checked={this.state.selected==="signIn"}
                            onChange={this.switch.bind(this)}/>
-                    <label htmlFor="signin">登录</label>
+                    <label htmlFor="signin">Sign In</label>
                 </nav>
                 <div className="panels">
                     {this.state.selected==="signUp"?

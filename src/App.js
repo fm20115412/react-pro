@@ -43,28 +43,28 @@ class App extends Component {
       if(this.state.user.id){
           return (
               <div className="App">
-                  <h1>{this.state.user.username||"我"}的待办</h1>
+                  <h1>Welcome {this.state.user.username||"我"}</h1>
                   <div className="inputWrapper">
                       <TodoInput content={this.state.newTodo}
                                  onChange={this.changeTitle.bind(this)}
                                  onSubmit={this.addTodo.bind(this)}/>
                   </div>
+                  <div className="switchButton">
+                      <button className={classNames({selected: this.state.selected === "all"})} onClick={this.switch.bind(this,"all")}>All</button>
+                      <button className={classNames({selected: this.state.selected === "processing"})} onClick={this.switch.bind(this,"processing")}>Processing</button>
+                      <button className={classNames({selected: this.state.selected === "completed"})} onClick={this.switch.bind(this,"completed")}>Completed</button>
+                  </div>
                   <ol className="todoList">
                       {todos}
                   </ol>
                   <div className="todoManage">
-                      <span>{(this.state.todoList.filter((item)=>(!item.deleted&&item.status==="processing"))).length} items left</span>
-                      <div className="switchButton">
-                          <button className={classNames({selected: this.state.selected === "all"})} onClick={this.switch.bind(this,"all")}>所有任务</button>
-                          <button className={classNames({selected: this.state.selected === "processing"})} onClick={this.switch.bind(this,"processing")}>正在进行</button>
-                          <button className={classNames({selected: this.state.selected === "completed"})} onClick={this.switch.bind(this,"completed")}>已完成</button>
-                      </div>
+                      <div>{(this.state.todoList.filter((item)=>(!item.deleted&&item.status==="processing"))).length} items left</div>
                       {(this.state.todoList.filter((item)=>(!item.deleted&&item.status==="completed"))).length>0?
-                      <button className="clearCompleted" onClick={this.clear.bind(this)}>清除已完成</button>:null}
+                      <div className="clearCompleted" onClick={this.clear.bind(this)}>Clear completed</div>:null}
                   </div>
 
                   {this.state.user.id? <button className="loginOut"
-                       onClick={this.onSignOut.bind(this)}>登出</button>:null }
+                       onClick={this.onSignOut.bind(this)}>Login Out</button>:null }
               </div>
           )
       }else{

@@ -17,24 +17,58 @@
 .App h1{
   color: #fff;
 }
+
 .App .switchButton{
   display: flex;
   justify-content: space-between;
   width:100%;
+  border-radius:5px;
+  border:2px solid #ebbca7;
 }
 .App .switchButton button{
-  width:30%;
+  font-size: 18px;
+  height: 40px;
+  padding: 5px;
+  background: none;
+  color:white;
+  outline:none;
+  border:none
+}
+.App .switchButton button:hover{
+  background: #ebbca7;
+}
+.App .switchButton .selected{
+  background: #ebbca7;
+}
+.App .switchButton button{
+  width:33.3333%;
+  border-right: 1px solid #ebbca7;
+}
+.App .switchButton button:last-child{
+  border:none;
+}
+.App .todoManage{
+  margin-top: 25px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  color:white;
+  font-size: 18px;
+}
+.App .todoManage .clearCompleted:hover{
+  border-bottom: 1px solid white;
 }
 .App .loginOut{
   /*position: absolute;
   bottom: 10px;
   left:250px;*/
-  width:20%;
-  height:2.5em;
-  background:rgba(30,187,202,.7);
+  width:100%;
+  height:2.2em;
+  background:rgba(30,187,202,.6);
   font-size: 20px;
   padding:10px;
   border:none;
+  border-radius: 5px;
   outline:none;
   color:white;
   margin-top: 1em;

@@ -50,21 +50,21 @@ class App extends Component {
                                  onSubmit={this.addTodo.bind(this)}/>
                   </div>
                   <div className="switchButton">
-                      <button className={classNames({selected: this.state.selected === "all"})} onClick={this.switch.bind(this,"all")}>All</button>
-                      <button className={classNames({selected: this.state.selected === "processing"})} onClick={this.switch.bind(this,"processing")}>Processing</button>
-                      <button className={classNames({selected: this.state.selected === "completed"})} onClick={this.switch.bind(this,"completed")}>Completed</button>
+                      <button className={classNames({selected: this.state.selected === "all"})} onClick={this.switch.bind(this,"all")}>所有</button>
+                      <button className={classNames({selected: this.state.selected === "processing"})} onClick={this.switch.bind(this,"processing")}>正在处理</button>
+                      <button className={classNames({selected: this.state.selected === "completed"})} onClick={this.switch.bind(this,"completed")}>已完成</button>
                   </div>
                   <ol className="todoList">
                       {todos}
                   </ol>
                   <div className="todoManage">
-                      <div>{(this.state.todoList.filter((item)=>(!item.deleted&&item.status==="processing"))).length} items left</div>
+                      <div>剩余{(this.state.todoList.filter((item)=>(!item.deleted&&item.status==="processing"))).length}件待处理</div>
                       {(this.state.todoList.filter((item)=>(!item.deleted&&item.status==="completed"))).length>0?
-                      <div className="clearCompleted" onClick={this.clear.bind(this)}>Clear completed</div>:null}
+                      <div className="clearCompleted" onClick={this.clear.bind(this)}>清除已完成</div>:null}
                   </div>
 
                   {this.state.user.id? <button className="loginOut"
-                       onClick={this.onSignOut.bind(this)}>Login Out</button>:null }
+                       onClick={this.onSignOut.bind(this)}>登出</button>:null }
               </div>
           )
       }else{

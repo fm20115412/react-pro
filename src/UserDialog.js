@@ -20,11 +20,11 @@ export default class UserDialog extends Component{
         }
     }
     isValidUsername(str) {
-        var exp = /^\w{6,20}$/; //可以以数字下划线开头
+        var exp = /^\w{3,20}$/; //可以以数字下划线开头
         return exp.test(str);
     }
     isLegalPassword(str){
-        if(str.length < 6 || str.length > 16){
+        if(str.length < 3|| str.length > 16){
             return false;
         }
         //如果包含上述四种以外的字符，false

@@ -41,32 +41,72 @@
     font-size: 16px;
     color:#f38c5e;
 }
-.signInOrSignUp form>.row{
+.signInOrSignUp form>.row,.forgotPassword form>.row{
     padding: .2em 0;
     margin-bottom: 1.8em;
     position: relative;
 }
-.signInOrSignUp form>.row input{
+.signInOrSignUp form>.row input,.forgotPassword form>.row input{
     padding: 0.3em 0em;
     width: 100%;
     border: none;
-    border-bottom: 1px solid rgba(243,140,94,0.5);
+    border-bottom: 1px solid #ccc;
     outline: none;
     font-size: 22px;
     color:#f38c5e;
 }
-.signInOrSignUp form>.row label{
+.signInOrSignUp form>.row input:focus ,.signInOrSignUp form>.row input:valid,
+.forgotPassword form>.row input:focus,.forgotPassword form>.row input:valid
+{
+    border:none
+}
+.signInOrSignUp form>.row label,.forgotPassword form>.row label{
     position: absolute;
     left:0px;
     top:20px;
     transition: all .5s ease;
-    font-size: 20px;
-    color:rgba(243,140,94,0.6)
+    font-size: 18px;
+    color:#ccc;
 }
-.signInOrSignUp form>.row input:focus ~ label,.signInOrSignUp form>.row input:valid ~ label{
+.signInOrSignUp form>.row input:focus ~ label,.signInOrSignUp form>.row input:valid ~ label,
+.forgotPassword form>.row input:focus ~ label,.forgotPassword form>.row input:valid ~ label
+{
     top:-20px;
     font-size: 14px;
     color:rgba(243,140,94,1)
+}
+.signInOrSignUp form>.row bar,.forgotPassword form>.row bar{
+    position: relative;
+    display: block;
+    width:100%;
+}
+.signInOrSignUp form>.row .bar:before, .signInOrSignUp form>.row .bar:after,
+.forgotPassword form>.row .bar:before, .forgotPassword form>.row .bar:after{
+    content:'';
+    height:2px;
+    width:0;
+    top:40px;
+    position:absolute;
+    background:#f38c5e;
+    transition:0.2s ease all;
+}
+.signInOrSignUp form>.row .bar:before,.forgotPassword form>.row .bar:before {
+    left:50%;
+}
+.signInOrSignUp form>.row .bar:after,.forgotPassword form>.row .bar:after {
+    right:50%;
+}
+/* active state */
+.signInOrSignUp form>.row input:focus ~ .bar:before,
+.signInOrSignUp form>.row input:focus ~ .bar:after,
+.signInOrSignUp form>.row input:valid ~ .bar:before,
+.signInOrSignUp form>.row input:valid ~ .bar:after,
+.forgotPassword form>.row input:focus ~ .bar:before,
+.forgotPassword form>.row input:focus ~ .bar:after,
+.forgotPassword form>.row input:valid ~ .bar:before,
+.forgotPassword form>.row input:valid ~ .bar:after
+{
+    width:50%;
 }
 .signUp>.row button{
     width:100%;
@@ -81,22 +121,25 @@
 .signUp>.row button:hover,
 .signIn>.row button:hover,
 .signIn>.actions a:hover,
-.forgotPassword>.row button:hover,
-.forgotPassword>.actions a:hover{
+.forgotPassword .row button:hover,
+.forgotPassword .actions a:hover{
     background:rgba(30,187,202,1);
 }
 .signUp .row .info{
-    display: inline-block;
+    display: none;
     font-size: 12px;
     width:100%;
     color:rgba(30,187,202,0.7);
+}
+.signInOrSignUp form>.row input:focus ~ .info{
+    display: inline-block;
 }
 .signIn .actions,.forgotPassword .actions{
     display: flex;
     align-items:flex-end;
     justify-content: space-around;
 }
-.signIn>.actions button,.signIn>.actions a,.forgotPassword>.actions button,.forgotPassword>.actions a{
+.signIn>.actions button,.signIn>.actions a,.forgotPassword .actions button,.forgotPassword .actions a{
     width:45%;
     background:rgba(30,187,202,0.7);
     font-size: 20px;
@@ -107,7 +150,7 @@
     vertical-align: baseline;
     line-height: 1.2;
 }
-.signIn>.actions a,.forgotPassword>.actions a{
+.signIn>.actions a,.forgotPassword .actions a{
     text-decoration: none;
     text-align: center;
 }
@@ -118,23 +161,10 @@
     color: #1ebbca;
     text-align: center;
     font-size: 22px;
+    margin-bottom: 2em;
 }
-.forgotPassword>.row{
+.forgotPassword .row{
     padding: .3em 0;
     margin-bottom: .5em;
 }
-.forgotPassword>.row>label:first-child{
-    width:4em;
-    cursor: pointer;
-    color:#f38c5e;
-}
-.forgotPassword>.row input{
-    padding: 0.3em 0.5em;
-    width: 100%;
-    margin-top: 5px;
-    border: none;
-    border-bottom: 2px solid #f38c5e;
-    outline: none;
-    font-size: 22px;
-    color:#f38c5e;
-}
+

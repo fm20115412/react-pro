@@ -37,6 +37,9 @@ export default class UserDialog extends Component{
         }
         return true;
     }
+    isValidEmail(str){
+        var exp=/@/
+    }
     signUp(e){
 
         e.preventDefault();
@@ -59,6 +62,10 @@ export default class UserDialog extends Component{
                 default: alert(error)
                          break
             }
+        }
+        if(!this.isValidEmail(email)){
+            alert("请输入合法的邮箱")
+            return
         }
         if(!this.isValidUsername(username)){
             alert("请输入合法的用户名")

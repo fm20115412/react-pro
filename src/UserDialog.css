@@ -167,4 +167,7 @@
     padding: .3em 0;
     margin-bottom: .5em;
 }
+.signInOrSignUp form>.actions,.forgotPassword form>.actions{
+    margin-bottom: 0;
+}
 

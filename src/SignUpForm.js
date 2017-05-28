@@ -25,7 +25,7 @@ export default class SignUpForm extends Component {
                     />
                     <label htmlFor="username">用户名</label>
                     <span className="bar"></span>
-                    <span className="info">3-20个字符，包括字母、数字、下划线</span>
+                    <span className="info">3-20个字符，只能包括字母、数字、下划线</span>
                 </div>
 
                 <div className="row">

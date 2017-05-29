@@ -20,18 +20,15 @@ export default class UserDialog extends Component{
         }
     }
     isValidUsername(str) {
-        var exp = /^\w{3,20}$/; //可以以数字下划线开头
-        return exp.test(str);
+        return /^\w{3,20}$/.test(str);
     }
     isLegalPassword(str){
         if(str.length < 3|| str.length > 16){
             return false;
         }
-        //如果包含上述四种以外的字符，false
         if(/[^A-Za-z_0-9]/.test(str)){
             return false;
         }
-        //如果全为大写、小写、下划线、数字, false
         if( /(^[a-z]+$)|(^[A-Z]+$)|(^_+$)|(^\d+$)/g.test(str) ){
             return false;
         }
@@ -108,7 +105,6 @@ export default class UserDialog extends Component{
         stateCopy.formData[key]=e.target.value
         this.setState(stateCopy)
     }
-
     render(){
         return (
             <div className="UserDialog-Wrapper">

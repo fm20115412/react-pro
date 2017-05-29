@@ -20,9 +20,6 @@ class App extends Component {
   }
   render(){
       let todoList=[]
-      let activeClass={
-          active:false
-      }
       if(this.state.selected==="all"){
           todoList=this.state.todoList.filter((item)=>!item.deleted)
       }else if(this.state.selected==="completed"){

@@ -35,7 +35,7 @@ export default class UserDialog extends Component{
         return true;
     }
     isValidEmail(str){
-        return /\w+@\w+\.[a-z]{2,5}/.test(str)
+        return /\w+@\w+\.[A-Za-z]{2,5}/.test(str)
     }
     signUp(e){
 

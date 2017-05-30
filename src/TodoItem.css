@@ -1,5 +1,6 @@
 .todoList{
     overflow-y: auto;
+    overflow-x: hidden;
     padding: 5px;
     max-height: calc(100vh - 430px);
     margin-top: 10px;
@@ -13,7 +14,6 @@
     -webkit-box-shadow: inset 0 0 6px rgba(30,187,202,.6);
     border-radius: 10px;
 }
-
 /* 滚动条滑块 */
 ::-webkit-scrollbar-thumb {
     border-radius: 10px;

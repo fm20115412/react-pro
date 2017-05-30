@@ -14,10 +14,11 @@ export default class TodoItem extends Component{
             </div>
         )
     }
-    toggle(e){
-        this.props.onToggle(e,this.props.todo)
+    toggle(){
+        // this.props.onToggle(e,this.props.todo)
+        this.props.onToggle(this.props.todo)
     }
-    delete(e){
-        this.props.onDelete(e,this.props.todo)
+    delete(){
+        this.props.onDelete(this.props.todo)
     }
 }

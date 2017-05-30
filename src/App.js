@@ -36,7 +36,6 @@ class App extends Component {
               </li>
           )
       })
-
       if(this.state.user.id){
           return (
               <div className="App">
@@ -152,12 +151,9 @@ saveTodo(){
     });
 }
 saveOrUpdateTodo(){
-    console.log("id:",this.state.todoList.id)
     if(this.state.todoList.id){
-        console.log("update");
         this.updateTodo();
     }else{
-        console.log("save");
         this.saveTodo();
     }
 }
@@ -170,7 +166,7 @@ addTodo(event){
   })
   this.setState({
         newTodo:"",
-        toloList:this.state.todoList
+        todoList:this.state.todoList
   })
   this.saveOrUpdateTodo()
 }
@@ -182,7 +178,7 @@ addTodo(event){
       })
   }
   // TodoItme 完成状态更改时调用这个函数
-  toggle(e,todo){
+  toggle(todo){
       todo.status=(todo.status==="processing")?"completed":"processing"
       this.saveOrUpdateTodo()
       this.setState(this.state)
@@ -194,9 +190,7 @@ addTodo(event){
        stateCopy.todoList.splice(index,1)
        this.setState(stateCopy)
        this.saveOrUpdateTodo()
-       // this.get()
    }
-
 }
 export default App;
 let id=0;
